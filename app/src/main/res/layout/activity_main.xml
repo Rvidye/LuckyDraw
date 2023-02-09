@@ -4,108 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainactivitybg"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/cs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginBottom="100dp"
         android:onClick="onCreateSession"
         android:text="Create Session"
+        app:layout_constraintBottom_toTopOf="@+id/nametv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sid" />
+        app:layout_constraintTop_toBottomOf="@+id/timertv"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginBottom="139dp"
         android:onClick="onAddPlayer"
         android:text="Add Player"
+        app:layout_constraintBottom_toTopOf="@+id/gamestartbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balancetv" />
+        app:layout_constraintTop_toBottomOf="@+id/balancetv"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/timertv"
-        android:layout_width="148dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
-        android:hint="Time"
+
+        android:hint="Enter session time : "
         android:inputType="number"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sid"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/gamestartbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:onClick="onStartGame"
         android:text="Start Game"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/sid"
+        app:layout_constraintTop_toBottomOf="@+id/pidtv"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/balancetv"
-        android:layout_width="116dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="55dp"
         android:ems="10"
-        android:hint="Balance"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        android:hint="Enter balance : "
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nametv"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/nametv"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Enter player name : "
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/balancetv"
+        app:layout_constraintEnd_toStartOf="@+id/pidtv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cs" />
+        app:layout_constraintTop_toBottomOf="@+id/cs"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/sid"
-        android:layout_width="311dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="96dp"
-        android:gravity="center"
-        android:text="Session id"
-        android:textSize="24sp"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="35dp"
+        android:gravity="bottom"
+        android:text="Session id : "
+        android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/timertv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/pidtv"
-        android:layout_width="166dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="309dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="317dp"
+        android:gravity="bottom"
         android:text="Player ID :"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gamestartbtn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nametv"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

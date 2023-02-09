@@ -42,16 +42,6 @@ public class PlayerActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player);
 		gamei = new Intent(this,GameInProgress.class);
-		b0 = findViewById(R.id.b0);
-		b1 = findViewById(R.id.b1);
-		b2 = findViewById(R.id.b2);
-		b3 = findViewById(R.id.b3);
-		b4 = findViewById(R.id.b4);
-		b5 = findViewById(R.id.b5);
-		b6 = findViewById(R.id.b6);
-		b7 = findViewById(R.id.b7);
-		b8 = findViewById(R.id.b8);
-		b9 = findViewById(R.id.b9);
 		votebtn = findViewById(R.id.votebtn);
 		sid = findViewById(R.id.sesid);
 		pid = findViewById(R.id.pid);

@@ -95,4 +95,9 @@ public class FirstPage extends AppCompatActivity {
 		super.onPause();
 		dbRef.child("users").removeEventListener(userDataListner);
 	}
+
+	@Override
+	public void onBackPressed() {
+		//
+	}
 }

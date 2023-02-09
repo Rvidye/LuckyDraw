@@ -120,12 +120,6 @@ public class PlayerActivity extends AppCompatActivity{
 					}
 				}
 				//Log.d("Session Player :",""+psession.getId()+" "+timeinml+" "+canVote+" "+winnerString);
-				if(canVote)
-				{
-					gamei.putExtra("sid",psession.getId());
-					gamei.putExtra("time",""+timeinml);
-					startActivity(gamei);
-				}
 			}
 			@Override
 			public void onCancelled(@NonNull DatabaseError error) {
@@ -233,8 +227,8 @@ public class PlayerActivity extends AppCompatActivity{
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if(canVote)
-			checkWinner();
+		//if(canVote)
+			//checkWinner();
 	}
 
 	@Override

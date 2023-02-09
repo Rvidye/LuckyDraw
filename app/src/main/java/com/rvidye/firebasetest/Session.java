@@ -108,8 +108,9 @@ public class Session implements ValueEventListener{
 				//push to db
 			}
 		}
-		/*
+
 		dbRef.child("session").child(this.getId()).child("winner").setValue(winner);
+		/*
 		// remove all players from db and list
 		for(Player p : players)
 		{

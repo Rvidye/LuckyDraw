@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092178138920",
+    "project_id": "databasetest-108f5",
+    "storage_bucket": "databasetest-108f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092178138920:android:3cde4c292d5f77f1e6221d",
+        "android_client_info": {
+          "package_name": "com.rvidye.firebasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092178138920-jon7eclimnr4tm5hlk0vhrtj3294tdi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR4OSWDmhATthjCw-q4UwGCaZ3oigSx60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092178138920-jon7eclimnr4tm5hlk0vhrtj3294tdi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

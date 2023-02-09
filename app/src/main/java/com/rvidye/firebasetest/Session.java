@@ -15,6 +15,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Session implements ValueEventListener{
 
@@ -37,10 +38,9 @@ public class Session implements ValueEventListener{
 		id = "0000";
 		done = false;
 		voteValue = new float[10];
-		for(int i = 0; i  < voteValue.length; i++)
-			voteValue[i] = 9999;
+		Arrays.fill(voteValue,9999);
 		time = 0;
-		players = new ArrayList<Player>();
+		players = new ArrayList();
 		//dbRef = FirebaseDatabase.getInstance("https://databasetest-108f5-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
 	}
 
@@ -51,7 +51,7 @@ public class Session implements ValueEventListener{
 		voteValue = new float[10];
 		for(int i = 0; i  < voteValue.length; i++)
 			voteValue[i] = 9999;
-		players = new ArrayList<Player>();
+		players = new ArrayList();
 		//dbRef = FirebaseDatabase.getInstance("https://databasetest-108f5-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
 	}
 
@@ -65,7 +65,7 @@ public class Session implements ValueEventListener{
 	public void StartGame()
 	{
 
-		ArrayList<String> winner = new ArrayList<String>();
+		ArrayList<String> winner = new ArrayList();
 		dbRef.child("session").child(this.getId()).child("isStart").setValue(true);
 		if(players.isEmpty())
 			Log.e("Error","No player in session !!!");
@@ -110,14 +110,12 @@ public class Session implements ValueEventListener{
 		}
 
 		dbRef.child("session").child(this.getId()).child("winner").setValue(winner);
-		/*
 		// remove all players from db and list
 		for(Player p : players)
 		{
 			dbRef.child("users").child(p.getId()).removeValue();
 			//players.remove(p);
 		}
-		*/
 		players.clear();
 		dbRef.child("users").removeEventListener(this);
 		//return  winner;

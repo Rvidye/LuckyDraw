@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PlayerActivity extends AppCompatActivity{
 
-	Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,votebtn;
+	Button votebtn;
 	TextView sid,pid,pname,votetv,balance;
 	EditText betet;
 	private DatabaseReference dbRef;
@@ -32,7 +32,7 @@ public class PlayerActivity extends AppCompatActivity{
 	long timeinml;
 	boolean canVote = true;
 	String winnerString = "0";
-	Intent gamei ;
+	Intent gamei;
 
 	private ValueEventListener userValeListner;
 	private ValueEventListener sessionValeListner;
@@ -123,44 +123,54 @@ public class PlayerActivity extends AppCompatActivity{
 
 	public void setVote(View v)
 	{
-		Button b = (Button) v;
-		switch (b.getText().toString())
+		//Button b = (Button) v;
+		switch (v.getId())
 		{
-			case "0":
+			case R.id.grah:
 				vote = 0;
+				votetv.setText("Vote :: Grah");
 			break;
-			case "1":
+			case R.id.vastu:
 				vote = 1;
+				votetv.setText("Vote :: Vastu");
 			break;
-			case "2":
+			case R.id.vashikaran:
 				vote = 2;
+				votetv.setText("Vote :: Vashikaran");
 			break;
-			case "3":
+			case R.id.tara:
 				vote = 3;
+				votetv.setText("Vote :: Tara");
 			break;
-			case "4":
+			case R.id.sudarshan:
 				vote = 4;
+				votetv.setText("Vote :: Sudarshan");
 			break;
-			case "5":
+			case R.id.shree:
 				vote = 5;
+				votetv.setText("Vote :: Shree");
 			break;
-			case "6":
+			case R.id.planet:
 				vote = 6;
+				votetv.setText("Vote :: Planet");
 			break;
-			case "7":
+			case R.id.meditation:
 				vote = 7;
+				votetv.setText("Vote :: Meditation");
 			break;
-			case "8":
+			case R.id.love:
 				vote = 8;
+				votetv.setText("Vote :: Love");
 			break;
-			case "9":
+			case R.id.matsya:
 				vote = 9;
+				votetv.setText("Vote :: Matsya");
 			break;
 			default:
 				vote = -1;
+				votetv.setText("Vote :: Invalid");
 			break;
 		}
-		votetv.setText("Vote :: "+vote);
 	}
 
 	public void RegisterVote(View v)
@@ -173,13 +183,25 @@ public class PlayerActivity extends AppCompatActivity{
 			// create new timer
 			value = Float.parseFloat(betet.getText().toString());
 			if(value < 100 || value > player.getBalance())
+			{
+				Toast.makeText(this,"Value Invalid",Toast.LENGTH_SHORT).show();
 				Log.e("Error","Value Invalid");
+				return;
+			}
 
 			if(player.getBalance() <= 0)
+			{
+				Toast.makeText(this,"Not enough balance",Toast.LENGTH_SHORT).show();
 				Log.e("Error","Not enough balance");
+				return;
+			}
 
 			if(vote == -1)
+			{
+				Toast.makeText(this,"Vote invalid",Toast.LENGTH_SHORT).show();
 				Log.e("Error","Vote invalid");
+				return;
+			}
 
 			player.setBalance(player.getBalance() - value);
 			dbRef.child("users").child(player.getId()).child("balance").setValue(player.getBalance());

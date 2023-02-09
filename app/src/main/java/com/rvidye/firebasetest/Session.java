@@ -108,6 +108,7 @@ public class Session implements ValueEventListener{
 				//push to db
 			}
 		}
+		/*
 		dbRef.child("session").child(this.getId()).child("winner").setValue(winner);
 		// remove all players from db and list
 		for(Player p : players)
@@ -115,6 +116,7 @@ public class Session implements ValueEventListener{
 			dbRef.child("users").child(p.getId()).removeValue();
 			//players.remove(p);
 		}
+		*/
 		players.clear();
 		dbRef.child("users").removeEventListener(this);
 		//return  winner;

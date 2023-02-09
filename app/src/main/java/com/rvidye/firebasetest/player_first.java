@@ -34,6 +34,11 @@ public class player_first extends AppCompatActivity {
 		sstart = findViewById(R.id.sfidbtn);
 	}
 
+	@Override
+	public void onBackPressed() {
+		//
+	}
+
 	public void onSessionClick(View v)
 	{
 		sid = sesid.getText().toString();

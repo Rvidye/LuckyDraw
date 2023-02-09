@@ -17,6 +17,8 @@ public class GameInProgress extends AppCompatActivity {
 	private String agent;
 	private TextView gsid;
 
+	private Intent go;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,10 +50,19 @@ public class GameInProgress extends AppCompatActivity {
 			@Override
 			public void onFinish() {
 				//Log.e("Timer","Done");
-				finish();
+				// Go to winners activity
+				go = new Intent(getApplicationContext(),GameFinished.class);
+				go.putExtra("sid",sid);
+				startActivity(go);
+				//finish();
 			}
 		};
 		timer.start();
+	}
+
+	@Override
+	public void onBackPressed() {
+		//
 	}
 
 	@Override
